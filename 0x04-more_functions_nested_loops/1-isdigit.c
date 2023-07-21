@@ -2,14 +2,13 @@
 #include <stdio.h>
 
 /**
- * _isdigit - checks if numbers are 0 - 9
- * @char: char to be checked
+ * main - check the code
  *
- * Return: 0 or 1
+ * Return: Always 0.
  */
-int _isdigit(int c)
+int main(void)
 {
-	char c;
+    char c;
 
     c = '0';
     printf("%c: %d\n", c, _isdigit(c));
