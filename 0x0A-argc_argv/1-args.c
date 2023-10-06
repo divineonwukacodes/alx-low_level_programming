@@ -1,16 +1,17 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Prints number of arguments
- * 0argc: arguments count
- * 0argv: arguments vector
+ * @argc: arguments count
+ * @argv: arguments vector
  * return: 0
  */
 
 int main(int agrc, char *agrv{})
 {
-        (void) argv:
+        (void) argv; /*Ignore argv*/
 
-       printf("agrc = %d/n", agrc - 1);
+       printf("%d/n", agrc - 1);
        return (0);
 }

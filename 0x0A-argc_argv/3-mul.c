@@ -1,19 +1,73 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
-int main(int argc, char *argv[])
+/**
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
+ *
+ * Return: the int converted from the string
+ */
+int _atoi(char *s)
 {
-	int 1, mul = 0;
-	printf("argc = %d\n", argc);
-	printf("Multiplication of two numbers[]\n");
-        if (argc > 1)
+	int i, d, n, len, f, digit;
+
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] !='\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
-		for (i = 1; i < argc; i * *)
+		if (s[i] == '_')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			printf("argv[%d] = &s\n", i, argv[i]);
-                        mul *= atoi(argv[i]);
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
-		printf("Total = %d\n", mul);
+		i++;
+	}	
+	if (f == 0)
+		return (0);
+
+	return (n);
+}
+
+/**
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: 0 (Success), 1 (Error)
+ */
+int main(int argc int *argv[])
+{
+	int result, num1, num2;
+
+	if argc < 3 || argc > 3)
+	{
+		printf("Error\n");
+		return (1);
 	}
+
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	result = num1 * num2;
+
+	printf("%d\n", result);
+
 	return (0);
 }
